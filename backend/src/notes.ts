@@ -20,7 +20,7 @@ export function buildNote(input: NoteInput, now: Date = new Date()): Note {
   const title = typeof input.title === 'string' ? input.title : '';
   const body = typeof input.body === 'string' ? input.body.trim() : '';
 
-  if (title.length == 0) throw new ValidationError('title is required');
+  if (title.length === 0) throw new ValidationError('title is required');
   if (title.length > 80) throw new ValidationError('title must be 80 characters or fewer');
 
   return {
